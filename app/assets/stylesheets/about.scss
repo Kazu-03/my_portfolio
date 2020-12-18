@@ -1,0 +1,62 @@
+.container{
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  .about-contents{
+    height: 350px;
+    background-image: image-url("about.jpeg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .inner{
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+    .about{
+      text-align: center;
+      text-shadow: rgba(0,0,0,4) 0 0 5px;
+      font-size: 18px;
+      line-height: 1.77778;
+      color: #fff;
+      margin: 16px 0 0 0;
+      .about-title{
+        text-align: center;
+        position: relative;
+      }
+      .about-title::after {
+        content: "";
+        width: 50px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .about-main{
+    line-height: 1.8em;
+    position: relative;
+    p{
+      position: absolute;
+      top: 0;
+      left: 320px;
+      padding-top: 70px;
+    }
+    .plofile{
+      position: absolute;
+      left: 0;
+      background-image: image-url("myimg.jpeg");
+      height: 300px;
+      width: 300px;
+    }
+  }
+}

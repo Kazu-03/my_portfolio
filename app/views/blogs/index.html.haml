@@ -1,0 +1,9 @@
+= render "layouts/header"
+
+.container
+  %section.blogs
+    %h2 Blogs
+    - if user_signed_in?
+      = link_to "投稿", new_blog_path, class:"btn"
+      %ul
+        = render "blogs/blogs"

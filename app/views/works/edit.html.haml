@@ -1,0 +1,25 @@
+.wrapper 
+  .work-contens
+  %h2.edit 編集
+  = form_with model: @work, local: true do |f|
+    .Exhibition-form
+      .work-title タイトル
+      = f.text_field :title, class: "title_field"
+    .Exhibition-form
+      .work-name プロダクトネーム
+      = f.text_field :productname, class: "name_field"
+    .Exhibition-form
+      .work-period 期間 
+      = f.text_field :period, class: "period_field"
+    .Exhibition-form
+      .work-skill スキル 
+      = f.text_field :skill, class: "skill_field"
+    .Exhibition-form
+      .work-detatil 詳細 
+      = f.text_field :detatil, class: "detatil_field"
+    .Exhibition-form
+      .image_field 画像
+      = f.fields_for :images do |image|
+        = image.file_field :src, class:"image_field"
+    .Exhibition-btn
+      = f.submit "投稿"

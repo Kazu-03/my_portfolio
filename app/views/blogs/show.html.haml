@@ -1,0 +1,26 @@
+= render "layouts/header"
+
+%h2.bloglist TechBlog
+.showMain
+  .showMain__container
+    .blog-Box
+      %h2.blog-Box__name
+        = @blog.title
+        = @blog.created_at.strftime('%Y/%m/%d')
+      .blog-Box__body
+        .blog-Box__body--bottom
+          - @blog.images.each do |image|
+            = image_tag image.src.url
+        .blog-Box__body--top
+          = @blog.detatil
+          -# .blog-box__body--image
+          -#   - if @blog.images.count >= 2
+          -#     %ul
+          -#       - @blog.images.each do |image|
+          -#         %li
+          -#           = image_tag image.src
+=link_to "一覧へ戻る", blogs_path, class:"listbtn" 
+- if user_signed_in? && current_user.id 
+  = link_to '編集', edit_blog_path(@blog.id), method: :get, class: 'btn_f'
+  = link_to '削除', blog_path(@blog.id), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn_f'
+

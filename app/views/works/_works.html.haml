@@ -1,0 +1,7 @@
+%li
+  - @works.each do |work|
+    = link_to work_path(work.id), method: :get do
+      - work.images.each do |image|
+        = image_tag image.src.url, class:"workimg"
+      .workentry
+        = work.title

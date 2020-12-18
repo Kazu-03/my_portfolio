@@ -1,0 +1,9 @@
+= render "layouts/header"
+
+.container
+  %section.works
+    %h2 Works
+    - if user_signed_in?
+      = link_to "投稿", new_work_path, class:"btn"
+      %ul
+        = render "works/works"

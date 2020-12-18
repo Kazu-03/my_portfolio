@@ -1,0 +1,41 @@
+= render "layouts/header"
+
+.showMain
+  .showMain__container
+    .workBox
+      %h2.workBox__name
+        = @work.productname
+      .workBox__body
+        .workBox__body--top
+          = image_tag @work .images[0].src.url,class:"workBox__body--top--image"
+        .workBox__body--bottom
+          - if @work.images.count >= 2
+            %ul
+              - @work.images.each do |image|
+                %li
+                  = image_tag image.src.url
+      .workBox__detatil
+        %p
+          %span 
+            概要
+            %br
+            .text
+              = @work.detatil 
+      .workBox__table
+        %table
+          %tbody
+            %tr
+              %th
+                制作期間
+              %td
+                = @work.period
+            %tr
+              %th
+                スキル
+              %td
+                = @work.skill
+=link_to "一覧へ戻る", works_path, class:"listbtn" 
+- if user_signed_in? && current_user.id 
+  = link_to '編集', edit_work_path(@work.id), method: :get, class: 'btn_f'
+  = link_to '削除', work_path(@work.id), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn_f'
+=link_to "一覧へ戻る", works_path, class:"listbtn" 

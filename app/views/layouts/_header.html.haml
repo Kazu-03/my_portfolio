@@ -1,0 +1,15 @@
+.header
+  .headerInner
+    .mainheader
+      %h1.icon 
+        =link_to "Myportfolio" ,root_path 
+      .nav
+        %ul.listsleft
+          %li.listsleft__item--first
+            .listsleft__item--icon-b
+              =icon("fab","blogger-b")
+              =link_to "TechBlog",blogs_path, class: "blog" 
+          %li.listsleft__item--second
+            =link_to "Works",works_path, class: "nav-works"
+          %li.listsleft__item--last
+            =link_to "About",abouts_path, class: "nav-about"

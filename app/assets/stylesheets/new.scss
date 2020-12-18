@@ -1,0 +1,103 @@
+.wrapper{
+  background-color: rgb(25, 255, 255);
+  .blog-contens{
+
+    .Exhibition-form{
+      padding:30px;
+      margin-top: 16px;
+      line-height: 1.4em;
+      .blog-title {
+        padding-bottom:10px;
+      }
+      .title_field{
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 40px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+      }
+      .blog-text{
+        padding-bottom:10px;
+      }
+      .text_field{
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 300px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+      }
+      .image_field{
+        padding-bottom:10px;
+      }
+      .upload-box{
+        margin-top: 16px;
+        .upload-area{
+          display: flex;
+          flex-wrap: wrap;
+          margin: -8px -4px 0px;
+          .images_upload-box{
+            flex: 1 1 0%;
+            height: 165px;
+            margin-top: 8px;
+            margin: 0 4px;
+            #images_upload{
+              place-content: center;
+              -webkit-box-align: center;
+              display: flex;
+              height: 100%;
+              background-color: rgb(230, 230, 230);
+              flex-wrap: wrap;
+              -webkit-box-pack: center;
+              align-items: center;
+              text-align: center;
+              border:dashed 1px rgb(192, 192, 192);
+              cursor: pointer;
+              position: relative;
+              transition: all 0.5s ease-out 0s;
+              margin-top: 5px;
+            }
+          }
+        }
+        #image-box{
+          display: block;
+          display: none;
+        }
+      }
+    }
+    .Exhibition-btn{
+      height: 48px;
+      width: 360px;
+      background-color: #ea352d;
+      color: #ffffff;
+      display:flex;
+      align-items: center;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      input {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        content: "";
+        background-color: #ea352d;
+        color: #F8F8F8;
+        border-style: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+= render "layouts/header"
+
+.main
+  %section.mainVisual
+    .content
+      %h2.content__subtitle Where there is will there is a way
+      %p.content__text If you try hard, anything is possible
+      %p.content__text If you don't try, you won't succeed
+  %section.Middle
+    %h2.blogs TechBlog
+    .blogbox 
+      - @blogs.each do |blog|
+        %p.blogdiary
+          =blog.created_at.strftime('%Y/%m/%d')
+        = link_to blog_path(blog.id), method: :get do
+          %p.blogtitle
+            = blog.title
+    .contentbox
+      .work-img
+        =link_to works_path, class:"works" do
+          Works
+      .about-img
+        =link_to abouts_path, class:"about" do
+          About

@@ -1,0 +1,8 @@
+%li
+  - @blogs.each do |blog|
+    = link_to blog_path(blog.id), method: :get do
+      .blogentry
+        .blogdiary
+          = blog.created_at.strftime('%Y/%m/%d')
+        .blogtitle
+          = blog.title
